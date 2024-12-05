@@ -1,0 +1,38 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "dev.flutter.flutter-gradle-plugin" 
+}
+
+android {
+    namespace = "com.example.google_ads"
+    compileSdk 34 
+    ndkVersion = flutter.ndkVersion
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8" // Corrected syntax for JVM target
+    }
+
+    defaultConfig {
+        applicationId = "com.example.google_ads"
+        minSdk 21 // Corrected syntax for minSdk
+        targetSdk flutter.targetSdkVersion // Corrected syntax for targetSdk
+        versionCode flutter.versionCode
+        versionName flutter.versionName
+    }
+
+    buildTypes {
+        release {
+            signingConfig signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
